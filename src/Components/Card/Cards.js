@@ -3,22 +3,24 @@ import {Card} from "react-bootstrap";
 
 const Cards = () => {
 
+
   const cardInfo = [
-    {image: "", title: "Terrible", text: "Terrible"},
-    {image: "", title: "Bad", text: "Bad"},
-    {image: "", title: "Neutral", text: "Neutral"},
-    {image: "", title: "Good", text: "Good"},
-    {image: "", title: "Terrific", text: "Terrific"},
+    {title: "✔️", text: "Thought"},
+    {title: "😢", text: "Terrible"},
+    {title: "😞", text: "Bad"},
+    {title: "😐", text: "Neutral"},
+    {title: "😊", text: "Good"},
+    {title: "😄", text: "Terrific"},
+    {title: "❤️", text: "Gratitude"},
 
   ];
 
   const renderCard = (card, index) => {
     return (
       <Card style={{ width: '18rem' }} key={index}>
-          <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
-              <Card.Title> {card.title}</Card.Title>
-              <Card.Text> {card.text} </Card.Text>
+              <Card.Title style={{fontSize: '75pt'}}> {card.title}</Card.Title>
+              <Card.Text style={{fontWeight: 'bold', fontSize: '20pt'}}> {card.text} </Card.Text>
           </Card.Body>
         </Card>
     )
@@ -36,3 +38,6 @@ const Cards = () => {
 
 
 export default Cards;
+
+//how to add your own images
+//card/index parameters - need to review for interview
