@@ -1,22 +1,34 @@
 import React from "react";
 import {Card} from "react-bootstrap";
 
-const Cards = (props) => {
+const Cards = () => {
 
-  const cardInfo = "test"
-  //data binding 
+  const cardInfo = [
+    {image: "", title: "Terrible", text: "Terrible"},
+    {image: "", title: "Bad", text: "Bad"},
+    {image: "", title: "Neutral", text: "Neutral"},
+    {image: "", title: "Good", text: "Good"},
+    {image: "", title: "Terrific", text: "Terrific"},
+
+  ];
+
+  const renderCard = (card, index) => {
     return (
-       <div className="cardApp">
-        <Card style={{ width: '18rem' }}>
+      <Card style={{ width: '18rem' }} key={index}>
           <Card.Img variant="top" src="holder.js/100px180" />
           <Card.Body>
-            <Card.Title> {cardInfo} </Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
-            </Card.Text>
+              <Card.Title> {card.title}</Card.Title>
+              <Card.Text> {card.text} </Card.Text>
           </Card.Body>
         </Card>
+    )
+
+  }
+
+
+    return (
+       <div className="cardApp">
+         {cardInfo.map(renderCard)}
        </div>
 
     );
