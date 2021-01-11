@@ -3,30 +3,39 @@ import {Card} from "react-bootstrap";
 
 const Cards = () => {
 
+  function handleClick(card) {
+    console.log(card)
+    card.editing = true
+  }
+
 
   const cardInfo = [
-    {title: "✔️", text: "Thought"},
-    {title: "😢", text: "Terrible"},
-    {title: "😞", text: "Bad"},
-    {title: "😐", text: "Neutral"},
-    {title: "😊", text: "Good"},
-    {title: "😄", text: "Terrific"},
-    {title: "❤️", text: "Gratitude"},
+    {title: "✔️", text: "Thought", editing: true},
+    {title: "😢", text: "Terrible", editing: false},
+    {title: "😞", text: "Bad", editing: false},
+    {title: "😐", text: "Neutral", editing: false},
+    {title: "😊", text: "Good", editing: false},
+    {title: "😄", text: "Terrific", editing: false},
+    {title: "❤️", text: "Gratitude", editing: false},
 
   ];
 
   const renderCard = (card, index) => {
     return (
-      <Card style={{ width: '18rem' }} key={index}>
+      <div>
+        <Card style={{ width: '18rem' }} key={index} onClick={() => handleClick(card)}>
           <Card.Body>
               <Card.Title style={{fontSize: '75pt'}}> {card.title}</Card.Title>
               <Card.Text style={{fontWeight: 'bold', fontSize: '20pt'}}> {card.text} </Card.Text>
           </Card.Body>
         </Card>
+        {card.editing ? <input /> : null}
+      </div>
     )
 
-  }
+      
 
+  }
 
     return (
        <div className="cardApp">
@@ -35,7 +44,6 @@ const Cards = () => {
 
     );
   }
-
 
 export default Cards;
 
