@@ -1,11 +1,16 @@
 import React from "react";
 import {Card} from "react-bootstrap";
 
+
 const Cards = () => {
 
   function handleClick(card) {
+
+    // const [display] = useState()
+
+  
     console.log(card)
-    card.editing = true
+    
   }
 
 
@@ -29,7 +34,8 @@ const Cards = () => {
               <Card.Text style={{fontWeight: 'bold', fontSize: '20pt'}}> {card.text} </Card.Text>
           </Card.Body>
         </Card>
-        {card.editing ? <input /> : null}
+        {card.editing ? <input type="text" /> : null}
+        {card.editing ? <input type="submit" value="Submit" /> : null}
       </div>
     )
 
